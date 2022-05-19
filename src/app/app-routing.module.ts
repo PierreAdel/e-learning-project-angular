@@ -6,19 +6,32 @@ import { ArticlesComponent } from './articles/articles.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ErrorComponent } from './error/error.component';
+import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-    { path: 'courses', component: CoursesComponent },
-    { path: 'articles', component: ArticlesComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'signup', component: SignupComponent },
-    // otherwise redirect to home
-    { path: '**', component: ErrorComponent  }
+  {
+    path: 'courses',
+    component: CoursesComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'articles',
+    component: ArticlesComponent,
+    canActivate: [AuthGuardService],
+  },
+  { path: 'login', component: LoginComponent, canActivate: [AuthGuardService] },
+  {
+    path: 'signup',
+    component: SignupComponent,
+    canActivate: [AuthGuardService],
+  },
+  // otherwise redirect to home
+  { path: '**', component: ErrorComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

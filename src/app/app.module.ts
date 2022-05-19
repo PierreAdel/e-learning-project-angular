@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +10,9 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ErrorComponent } from './error/error.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthGuardService } from './auth-guard.service';
+import { AuthenticationService } from './authentication.service';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SignupComponent,
     ErrorComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  providers: [AuthGuardService, AuthenticationService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
