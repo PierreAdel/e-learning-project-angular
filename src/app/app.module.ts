@@ -14,6 +14,7 @@ import { AuthGuardService } from './auth-guard.service';
 import { AuthenticationService } from './authentication.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     SignupComponent,
     ErrorComponent,
+    CourseDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
   providers: [AuthGuardService, AuthenticationService],

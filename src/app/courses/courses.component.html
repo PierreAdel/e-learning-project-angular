@@ -1,3 +1,9 @@
 <div class="container">
     <h1>Your courses</h1>
+    <ul>
+        <li (click)="onSelect(course)" *ngFor="let course of courses">
+            <span class="">{{course.id}} </span>
+            <span class="">{{course.name}}</span>
+        </li>
+    </ul>
 </div>

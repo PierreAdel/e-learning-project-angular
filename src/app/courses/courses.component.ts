@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-courses',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent implements OnInit {
-
-  constructor() { }
+  courses=[
+    {"id":1,"name":"Angular"},
+    {"id":2,"name":"React"},
+    {"id":3,"name":"Vue"}
+  ]
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  onSelect(course:any) {
+    this.router.navigate(['/courses',course.id])
   }
 
 }

@@ -7,18 +7,22 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ErrorComponent } from './error/error.component';
 import { AuthGuardService } from './auth-guard.service';
+import {CourseDetailComponent} from './course-detail/course-detail.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'courses',
     component: CoursesComponent,
-    canActivate: [AuthGuardService],
+    // canActivate: [AuthGuardService],
+  },
+  {
+    path:'courses/:id',component: CourseDetailComponent
   },
   {
     path: 'articles',
     component: ArticlesComponent,
-    canActivate: [AuthGuardService],
+    // canActivate: [AuthGuardService],
   },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuardService] },
   {
