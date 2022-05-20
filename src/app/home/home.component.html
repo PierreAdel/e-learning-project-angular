@@ -1,6 +1,51 @@
-<div class="container">
+<div class="container my-4 pb-5">
+    <div class="d-flex">
+        <div class="">
+            <h2 class="display-4 fw-bold mb-4">Online Learning Is Easy with US</h2>
+            <p class="fs-5" style="width:50%">
+                The App aims to develop students’ critical thinking in order to
+                evaluate the factors affecting the success of new venture creation
+                and the innovation process; and provides the necessary tools to
+                evaluate the attractiveness of new business ideas.
+            </p>
+        </div>
+        <div>
+            <div>
+                <img src="../../assets/person.svg" alt="imageone" class="" />
+            </div>
+        </div>
+    </div>
+</div>
 
-    <h1>Home page</h1>
-    <h1>Online Learning Is
-        Easy with US</h1>
+<!-- courses -->
+<div>
+    <h1 class="display-4 text-decoration-underline d-flex justify-content-center">Courses</h1>
+    <div class="d-flex justify-content-evenly mt-5" id="">
+        <div class="d-flex flex-column" *ngFor="let course of courses">
+            <img src="../../assets/courseImg.svg" alt="{{course.name}}" />
+            <div style="text-align:center">
+                <h3>{{course.name}}</h3>
+                <div>
+                    <a (click)="onSelectCourse(course)" style="cursor:pointer;" class="link-secondary">Details</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Articles -->
+<div style="margin:100px 0;">
+    <h1 class="display-4 text-decoration-underline d-flex justify-content-center mb-5">Articles</h1>
+    <div class="d-flex justify-content-evenly">
+        <div *ngFor="let article of articles">
+            <div>
+                <img src="https://picsum.photos/230/230?random={{article.id}}" alt="{{article.name}}" />
+                <p style="width: 80%;">{{article.name}}</p>
+                <div style="text-align: center;">
+                    <a (click)="onSelectArticle(article)" style="cursor:pointer;" class="link-secondary">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

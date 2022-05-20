@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import { CoursesService } from '../courses.service';
 
 @Component({
   selector: 'app-courses',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent implements OnInit {
-
-  constructor() { }
+  public courses:any[]=[];
+  constructor(private _coursesService:CoursesService,private router:Router) { }
 
   ngOnInit(): void {
+    this.courses=this._coursesService.getCourses();
+  }
+
+  onSelect(course:any) {
+    this.router.navigate(['/courses',course.id])
   }
 
 }

@@ -1,3 +1,16 @@
 <div class="container">
-    <h1>Your courses</h1>
+    <h1 class="my-5">Courses</h1>
+    <div class="d-flex gap-5 mb-5" *ngFor="let course of courses">
+        <div>
+            <img src="https://picsum.photos/200/200?random={{course.id}}" alt="{{course.name}}" />
+        </div>
+        <div>
+            <h2>{{course.name}}</h2>
+            <p class="fs-5">{{course.description}}</p>
+            <small>By: <span class="fw-bold">{{course.teacher}}</span></small>
+            <div>
+                <a (click)="onSelect(course)" style="cursor:pointer;" class="link-secondary">Details</a>
+            </div>
+        </div>
+    </div>
 </div>

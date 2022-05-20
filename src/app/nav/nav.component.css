@@ -17,3 +17,11 @@ nav a {
   color: #13adcd;
   text-decoration: none;
 }
+
+nav a.active {
+  color: chocolate;
+}
+
+nav a:hover {
+  color: chocolate;
+}
