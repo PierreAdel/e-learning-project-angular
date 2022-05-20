@@ -18,15 +18,17 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
   },
   {
-    path:'courses/:id',component: CourseDetailComponent
+    path:'courses/:id',component: CourseDetailComponent,
+    canActivate: [AuthGuardService]
   },
   {
-    path:'articles/:id',component: ArticleDetailComponent
+    path:'articles/:id',component: ArticleDetailComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'articles',
     component: ArticlesComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuardService]
   },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuardService] },
   {
