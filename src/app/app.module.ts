@@ -15,6 +15,8 @@ import { AuthenticationService } from './authentication.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { CoursesService } from './courses.service';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,10 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
     SignupComponent,
     ErrorComponent,
     CourseDetailComponent,
+    ArticleDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
-  providers: [AuthGuardService, AuthenticationService],
+  providers: [AuthGuardService, AuthenticationService,CoursesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

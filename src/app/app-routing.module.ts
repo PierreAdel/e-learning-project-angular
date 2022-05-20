@@ -8,6 +8,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ErrorComponent } from './error/error.component';
 import { AuthGuardService } from './auth-guard.service';
 import {CourseDetailComponent} from './course-detail/course-detail.component'
+import {ArticleDetailComponent} from './article-detail/article-detail.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,9 @@ const routes: Routes = [
   },
   {
     path:'courses/:id',component: CourseDetailComponent
+  },
+  {
+    path:'articles/:id',component: ArticleDetailComponent
   },
   {
     path: 'articles',

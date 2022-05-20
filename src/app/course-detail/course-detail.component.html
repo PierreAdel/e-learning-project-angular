@@ -1,3 +1,10 @@
-<div class="container">
-    <p>course-detail works! with id = {{courseId}}</p>
+<div class="container mt-5">
+    <div>
+        <img style="width:100%" src="https://picsum.photos/1000/500?random=1" alt="{{courses[courseId-1].name}}" />
+    </div>
+    <div>
+        <h1 class="mt-5 mb-3">{{courses[courseId-1].name}}</h1>
+        <p class="fs-5">{{courses[courseId-1].description}}</p>
+        <small>By: <span class="fw-bold">{{courses[courseId-1].teacher}}</span></small>
+    </div>
 </div>
