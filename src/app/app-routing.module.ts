@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: 'courses',
     component: CoursesComponent,
-    // canActivate: [AuthGuardService],
+    canActivate: [AuthGuardService],
   },
   {
     path:'courses/:id',component: CourseDetailComponent
@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path: 'articles',
     component: ArticlesComponent,
-    // canActivate: [AuthGuardService],
+    canActivate: [AuthGuardService],
   },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuardService] },
   {

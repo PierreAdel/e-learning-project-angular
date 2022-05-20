@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { CoursesService } from './courses.service';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
     ErrorComponent,
     CourseDetailComponent,
     ArticleDetailComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
   providers: [AuthGuardService, AuthenticationService,CoursesService],
