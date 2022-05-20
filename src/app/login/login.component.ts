@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DbClientService } from '../db-client.service';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   public formData!: FormGroup;
-  constructor() { }
-  
+  constructor(private db:DbClientService) { }
 
   ngOnInit(): void {
     this.formData = new FormGroup({
@@ -18,5 +18,8 @@ export class LoginComponent implements OnInit {
       pass: new FormControl('', [Validators.required, Validators.maxLength(20)])
     });
   }
-
+  onSubmit(): void {
+    const{name,email,pass}=this.formData.value
+    this.db.login(email,pass);
+  }
 }

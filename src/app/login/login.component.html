@@ -3,12 +3,14 @@
         <div id="formContent">
             <form
             [formGroup]="formData"
-            class="pt-5">
+            class="pt-5"
+            (ngSubmit)="onSubmit()"
+            >
                 <input
-                type="email" 
-                id="login" 
+                type="email"
+                id="login"
                 class="fadeIn second"
-                name="login" 
+                name="login"
                 placeholder="Email"
                 formControlName="email" >
                 <br>
@@ -16,18 +18,18 @@
                     <div *ngIf="formData.get('email')?.errors?.['required']"> Email is required.</div>
                     <div *ngIf="formData.get('email')?.errors?.['email']">Wrong email format. </div>
                 </div>
-                <input 
+                <input
                 type="text"
                 id="password"
-                class="fadeIn third" 
-                name="login" 
-                placeholder="password" 
+                class="fadeIn third"
+                name="login"
+                placeholder="password"
                 [type]="'password'"
                 formControlName="pass">
                 <br>
                 <span style="color: red;" *ngIf="formData.get('pass')?.invalid"> password is required </span>
                 <br>
-                <input type="submit" class="fadeIn fourth" value="Log In">
+                <input [disabled]="!formData.valid" type="submit" class="fadeIn fourth" value="Log In">
             </form>
         </div>
     </div>
