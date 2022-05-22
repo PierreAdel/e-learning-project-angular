@@ -27,9 +27,5 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     const { email, pass } = this.formData.value;
     this.db.login(email, pass);
-    this.formData.setValue({
-      email: '',
-      pass: '',
-    });
   }
 }

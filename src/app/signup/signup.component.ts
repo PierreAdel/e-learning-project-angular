@@ -37,10 +37,5 @@ export class SignupComponent implements OnInit {
   onSubmit(): void {
     const { name, email, pass } = this.formData.value;
     this.db.signup(new User(name, email, pass));
-    this.formData.setValue({
-      name: '',
-      email: '',
-      pass: '',
-    });
   }
 }
