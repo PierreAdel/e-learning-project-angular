@@ -25,3 +25,9 @@ nav a.active {
 nav a:hover {
   color: chocolate;
 }
+
+.loader {
+  position:fixed;
+  width: 100%;
+  z-index: 99;
+}

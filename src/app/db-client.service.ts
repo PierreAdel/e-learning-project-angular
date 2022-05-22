@@ -13,6 +13,10 @@ export class DbClientService {
   this.httpClient.get<UserObj>(`${this.baseURL}/Users.json?orderBy="email"&equalTo="${user.email}"&limitToFirst=1`).subscribe(responseData => {
       if (responseData === null) {
         this.httpClient.post(`${this.baseURL}/Users.json`, user.getUserObj()).subscribe();
+        this.authService.login();
+      }
+      else {
+        alert("This Email is already taken!");
       }
     });
   }
