@@ -7,8 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ErrorComponent } from './error/error.component';
 import { AuthGuardService } from './auth-guard.service';
-import {CourseDetailComponent} from './course-detail/course-detail.component'
-import {ArticleDetailComponent} from './article-detail/article-detail.component'
+import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,17 +18,19 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
   },
   {
-    path:'courses/:id',component: CourseDetailComponent,
-    canActivate: [AuthGuardService]
+    path: 'courses/:id',
+    component: CourseDetailComponent,
+    canActivate: [AuthGuardService],
   },
   {
-    path:'articles/:id',component: ArticleDetailComponent,
-    canActivate: [AuthGuardService]
+    path: 'articles/:id',
+    component: ArticleDetailComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'articles',
     component: ArticlesComponent,
-    canActivate: [AuthGuardService]
+    canActivate: [AuthGuardService],
   },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuardService] },
   {
