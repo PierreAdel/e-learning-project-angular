@@ -13,11 +13,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuardService } from './auth-guard.service';
 import { AuthenticationService } from './authentication.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { CoursesService } from './courses.service';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { FooterComponent } from './footer/footer.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { InterceptorService } from './loader/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -33,13 +35,8 @@ import { FooterComponent } from './footer/footer.component';
     ArticleDetailComponent,
     FooterComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-  ],
-  providers: [AuthGuardService, AuthenticationService, CoursesService],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule, MatProgressBarModule],
+  providers: [AuthGuardService, AuthenticationService, CoursesService, {provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -34,3 +34,8 @@ nav a:hover {
 .mainhere {
   width: 63.7%;
 }
+.loader {
+  position:fixed;
+  width: 100%;
+  z-index: 99;
+}

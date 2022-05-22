@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
+import { LoaderService } from '../loader/loader.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,7 +8,7 @@ import { AuthenticationService } from '../authentication.service';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
-  constructor(private authService: AuthenticationService) {}
+  constructor(private authService: AuthenticationService, public  loaderService:LoaderService) {}
 
   ngOnInit(): void {}
   isLoggedIn() {

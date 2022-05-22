@@ -16,18 +16,15 @@ export class DbClientService {
     private router: Router
   ) {}
   signup(user: User) {
-    this.httpClient
-      .get<UserObj>(
-        `${this.baseURL}/Users.json?orderBy="email"&equalTo="${user.email}"&limitToFirst=1`
-      )
-      .subscribe((responseData) => {
-        if (responseData === null) {
-          this.httpClient
-            .post(`${this.baseURL}/Users.json`, user.getUserObj())
-            .subscribe();
-          this.router.navigate(['/']);
-        }
-      });
+  this.httpClient.get<UserObj>(`${this.baseURL}/Users.json?orderBy="email"&equalTo="${user.email}"&limitToFirst=1`).subscribe(responseData => {
+      if (responseData === null) {
+        this.httpClient.post(`${this.baseURL}/Users.json`, user.getUserObj()).subscribe();
+        this.authService.login();
+      }
+      else {
+        alert("This Email is already taken!");
+      }
+    });
   }
   login(email: string, password: string) {
     this.httpClient
