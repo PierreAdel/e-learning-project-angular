@@ -14,6 +14,7 @@ img {
 }
 
 nav a {
+  font-size: 18px;
   color: #13adcd;
   text-decoration: none;
 }
@@ -24,4 +25,12 @@ nav a.active {
 
 nav a:hover {
   color: chocolate;
+}
+
+.headerMain {
+  display: flex;
+  justify-content: center;
+}
+.mainhere {
+  width: 63.7%;
 }

@@ -1,0 +1,9 @@
+.homeWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.homeContainer {
+  width: 75%;
+}

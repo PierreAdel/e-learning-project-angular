@@ -1,24 +1,31 @@
-<nav class="d-flex justify-content-between mx-4">
+<div class="headerMain">
+  <nav class="d-flex justify-content-between mx-4 mainhere">
     <ul class="nav d-flex align-items-center justify-content-between">
-        <li>
-            <a routerLink="/">
-                <img src="../../assets/e-learning.png" alt="image">
-            </a>
-        </li>
-        <li>
-            <a routerLinkActive="active" routerLink="/courses">Courses</a>
-        </li>
-        <li>
-            <a routerLinkActive="active" routerLink="/articles">Articles</a>
-        </li>
-        <li>
-            <a routerLinkActive="active" routerLink="/login">Login</a>
-        </li>
-        <li>
-            <a routerLinkActive="active" routerLink="/signup">Signup</a>
-        </li>
+      <li>
+        <a routerLink="/">
+          <img src="../../assets/e-learning.png" alt="image" />
+        </a>
+      </li>
+      <li>
+        <a routerLinkActive="active" routerLink="/courses">Courses</a>
+      </li>
+      <li>
+        <a routerLinkActive="active" routerLink="/articles">Articles</a>
+      </li>
+      <li *ngIf="!isLoggedIn()">
+        <a routerLinkActive="active" routerLink="/login">Login</a>
+      </li>
+      <li *ngIf="!isLoggedIn()">
+        <a routerLinkActive="active" routerLink="/signup">Signup</a>
+      </li>
+      <li *ngIf="isLoggedIn()">
+        <a (click)="logout()" routerLinkActive="active" routerLink="/signup"
+          >Logout</a
+        >
+      </li>
     </ul>
     <div>
-        <img src="../../assets/avater.png" alt="avater">
+      <img src="../../assets/avater.png" alt="avater" />
     </div>
-</nav>
+  </nav>
+</div>

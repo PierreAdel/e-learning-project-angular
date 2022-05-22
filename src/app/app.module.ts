@@ -33,8 +33,13 @@ import { FooterComponent } from './footer/footer.component';
     ArticleDetailComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
-  providers: [AuthGuardService, AuthenticationService,CoursesService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
+  providers: [AuthGuardService, AuthenticationService, CoursesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

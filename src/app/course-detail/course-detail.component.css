@@ -1,0 +1,11 @@
+.courseContainer {
+  width: 67%;
+  margin: auto;
+}
+.courseWrapper {
+  display: flex;
+  justify-content: center;
+}
+.courseImage {
+  height: 650px;
+}

@@ -1,16 +1,39 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ArticlesService {
-
-  constructor() { }
-  getArticles(){
+  getArticles() {
     return [
-      {"id":1,"name":"How to Get high score in project review",description:"Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali ","teacher":"Mossad"},
-      {"id":2,"name":"decorater design pattern",description:"Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam","teacher":"Omar Salem"},
-      {"id":3,"name":"learn how to learn",description:" natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ips","teacher":"Omar Salem"}
-    ]
+      {
+        id: 1,
+        name: 'Start your business',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        teacher: 'Mossad',
+      },
+      {
+        id: 2,
+        name: 'Design patterns',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        teacher: 'Omar Salem',
+      },
+      {
+        id: 3,
+        name: 'A good PR',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        teacher: 'Omar Salem',
+      },
+      {
+        id: 4,
+        name: 'Factory design pattern',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        teacher: 'Pierre Adel',
+      },
+    ];
   }
 }

@@ -1,21 +1,63 @@
 <div class="container">
-    <div class="wrapper fadeInDown mt-5">
-        <div id="formContent">
-            <form [formGroup]="formData" class="pt-5" (ngSubmit)="onSubmit()">
-                <input type="email" id="login" class="fadeIn second" name="login" placeholder="Email"
-                    formControlName="email">
-                <br>
-                <div style="color: red;" *ngIf="formData.get('email')?.invalid">
-                    <div *ngIf="formData.get('email')?.errors?.['required']"> Email is required.</div>
-                    <div *ngIf="formData.get('email')?.errors?.['email']">Wrong email format. </div>
-                </div>
-                <input type="text" id="password" class="fadeIn third" name="login" placeholder="password"
-                    [type]="'password'" formControlName="pass">
-                <br>
-                <span style="color: red;" *ngIf="formData.get('pass')?.invalid"> password is required </span>
-                <br>
-                <input [disabled]="!formData.valid" type="submit" class="fadeIn fourth" value="Log In">
-            </form>
-        </div>
+  <div class="wrapper fadeInDown mt-5">
+    <div class="leftArea">
+      <img class="bigImage" src="../../assets/bgLogin.png" alt="login" />
+      <div class="bigText">
+        Best Learning Experience
+        <br />
+        Comes To Your Way
+      </div>
     </div>
+    <div id="formContent">
+      <div class="loginText">Login</div>
+      <form [formGroup]="formData" class="pt-1" (ngSubmit)="onSubmit()">
+        <div class="label">Email</div>
+        <input
+          type="email"
+          id="login"
+          class="fadeIn second"
+          name="login"
+          formControlName="email"
+        />
+        <br />
+        <div *ngIf="formData.get('email')?.invalid">
+          <div
+            class="error"
+            *ngIf="formData.get('email')?.errors?.['required'] && formData.get('email')?.touched"
+          >
+            Email is required.
+          </div>
+          <div
+            class="error"
+            *ngIf="formData.get('email')?.errors?.['email'] && formData.get('email')?.touched"
+          >
+            Wrong email format.
+          </div>
+        </div>
+        <div class="label">Password</div>
+        <input
+          type="text"
+          id="password"
+          class="fadeIn third"
+          name="login"
+          [type]="'password'"
+          formControlName="pass"
+        />
+        <br />
+        <p
+          class="error"
+          *ngIf="formData.get('pass')?.invalid && formData.get('pass')?.touched"
+        >
+          Password is required
+        </p>
+        <br />
+        <input
+          [disabled]="!formData.valid"
+          type="submit"
+          class="fadeIn fourth"
+          value="Login"
+        />
+      </form>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,11 @@
+.articleContainer {
+  width: 67%;
+  margin: auto;
+}
+.articleWrapper {
+  display: flex;
+  justify-content: center;
+}
+.articleImage {
+  height: 650px;
+}
