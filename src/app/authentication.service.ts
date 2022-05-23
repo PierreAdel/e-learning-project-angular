@@ -14,7 +14,6 @@ export class AuthenticationService {
   }
 
   logout() {
-    console.log('asd');
     this.isLoggedIn = false;
     this.router.navigate(['/']);
   }

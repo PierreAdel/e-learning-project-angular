@@ -13,18 +13,16 @@ export class DbClientService {
   constructor(
     private httpClient: HttpClient,
     private authService: AuthenticationService,
-    private router: Router
   ) {}
   signup(user: User) {
-  this.httpClient.get<UserObj>(`${this.baseURL}/Users.json?orderBy="email"&equalTo="${user.email}"&limitToFirst=1`).subscribe(responseData => {
-      if (responseData === null) {
-        this.httpClient.post(`${this.baseURL}/Users.json`, user.getUserObj()).subscribe();
-        this.authService.login();
-      }
-      else {
-        alert("This Email is already taken!");
-      }
-    });
+    this.httpClient
+      .get<UserObj>(
+        `${this.baseURL}/Users.json?orderBy="email"&equalTo="${user.email}"&limitToFirst=1`).subscribe((responseData) => {
+        if (responseData === null) {
+          this.httpClient.post(`${this.baseURL}/Users.json`, user.getUserObj()).subscribe();
+          this.authService.login();
+        }
+      });
   }
   login(email: string, password: string) {
     this.httpClient
@@ -35,7 +33,6 @@ export class DbClientService {
         let id: string = Object.keys(responseData)[0];
         if (responseData[id]?.password === password) {
           this.authService.login();
-          this.router.navigate(['/']);
         }
       });
   }
